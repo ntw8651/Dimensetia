@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e0de7e1fbe22fc418fd1d2748411743, type: 3}
+  m_Name: W_HandGun
+  m_EditorClassIdentifier: 
+  damage: 8
+  range: 25
+  type: 0
+  trajectory: {fileID: 8727615327390812614, guid: d5ad76289a91d7a4a9614454870283d1, type: 3}
+  weaponSprite: {fileID: 0}
+  canContinue: 0
+  reloadTime: 2
+  firerate: 0.1
+  bulletStack: 1
+  bulletSpreadAngle: 5
+  armDistance: 0
+  fireSound: {fileID: 8300000, guid: b08a965af727c79479acaab291942195, type: 3}
+  clickSound: {fileID: 8300000, guid: 8c2983709f0ce2248b23b264eab0325a, type: 3}
+  bulletSprite: {fileID: 0}
+  maxAmmo: 17
+  ammo: 0

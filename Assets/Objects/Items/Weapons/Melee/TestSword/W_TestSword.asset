@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 633aed07ff4531f49a6e6f5ad41b8f67, type: 3}
+  m_Name: W_TestSword
+  m_EditorClassIdentifier: 
+  damage: 0
+  range: 0
+  type: 0
+  comboAnimations:
+  - {fileID: 7400000, guid: 9e092c370d93e8f4188a2ca3e8cb4c3b, type: 2}
+  - {fileID: 7400000, guid: 6f63288b9c3f4ac48a36f801d2904e5b, type: 2}
+  - {fileID: 7400000, guid: 56bd6513a0fa49d45aafe41228177c8a, type: 2}
+  trajectory: {fileID: 0}
+  weaponSprite: {fileID: 0}
+  canContinue: 0
+  reloadTime: 2
+  firerate: 1
+  armDistance: 0
+  LHandPosition: {x: 0, y: 0}
+  RHandPosition: {x: 0, y: 0}
+  fireSound: {fileID: 0}
+  maxAmmo: 0
+  ammo: 0

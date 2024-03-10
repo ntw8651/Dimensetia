@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 312b2628a71b49b43a3ed62b2db11096, type: 3}
+  m_Name: I_HandGun
+  m_EditorClassIdentifier: 
+  displayName: HandGun
+  displaySprite: {fileID: -1634104141, guid: a33adfaa3e8f09e4e8c54fdd1d6c3170, type: 3}
+  prefab: {fileID: 6370643724868704444, guid: 5f21b1c2b7207f344b33b16dad27030e, type: 3}
+  count: 1
+  isEquipped: 0
+  isDropped: 0
+  type: 1
+  rangedWeaponInfo: {fileID: 11400000, guid: 16254bdc7b4611047865c25d6c317331, type: 2}
+  meleeWeaponInfo: {fileID: 0}

@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 312b2628a71b49b43a3ed62b2db11096, type: 3}
+  m_Name: I_Coin
+  m_EditorClassIdentifier: 
+  displayName: Coin
+  displaySprite: {fileID: 1171355578, guid: 2aef4efada8322f40b60e69d9f9c53aa, type: 3}
+  prefab: {fileID: 3760658067678874421, guid: 9e0a7b594d8e7c646a4cdc553ed455e5, type: 3}
+  count: 1
+  isEquipped: 0
+  isDropped: 1
+  type: 3
+  rangedWeaponInfo: {fileID: 0}
+  meleeWeaponInfo: {fileID: 0}

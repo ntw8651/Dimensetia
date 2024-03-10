@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f486e1642b30bd34f83f4e46a1234c00, type: 3}
+  m_Name: Player
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  health: 100
+  canAttack: 0
+  canMove: 0
+  canJump: 0
+  isAimming: 0
+  isAttacking: 0
+  isMoving: 0
+  isJumping: 0
+  isInBattle: 0
+  hitSFX: {fileID: 8300000, guid: f9f0716c6a9fdd64caa8a63b4912eafe, type: 3}
+  hitVFX: {fileID: 4718577830471588766, guid: aefe81d8fbd9910439798a11d9ad40a4, type: 3}
+  faction: 0
