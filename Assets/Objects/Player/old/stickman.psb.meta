@@ -21,11 +21,13 @@ ScriptedImporter:
     convertToNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
+    swizzle: 50462976
     isReadable: 0
     streamingMipmaps: 1
     streamingMipmapsPriority: 0
     vTOnly: 0
-    ignoreMasterTextureLimit: 0
+    ignoreMipmapLimit: 0
     nPOTScale: 1
     sRGBTexture: 1
     spriteMode: 2
@@ -88,7 +90,6 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    parentGroupIndex: -1
     uvTransform: {x: 0, y: 0}
     spritePosition: {x: 0, y: 0}
   mosaicSpriteImportData: []
@@ -196,7 +197,6 @@ ScriptedImporter:
     - {x: 3, y: 4}
     - {x: 4, y: 5}
     tessellationDetail: 0
-    parentGroupIndex: -1
     uvTransform: {x: 4, y: 46}
     spritePosition: {x: 5, y: 46}
   - name: rightDownArm
@@ -302,7 +302,6 @@ ScriptedImporter:
     - {x: 3, y: 4}
     - {x: 4, y: 5}
     tessellationDetail: 0
-    parentGroupIndex: -1
     uvTransform: {x: 24, y: 46}
     spritePosition: {x: 49, y: 46}
   - name: leftUpArm
@@ -432,7 +431,6 @@ ScriptedImporter:
     - {x: 6, y: 7}
     - {x: 7, y: 8}
     tessellationDetail: 0
-    parentGroupIndex: -1
     uvTransform: {x: 4, y: 29}
     spritePosition: {x: 16, y: 46}
   - name: rightUpArm
@@ -551,7 +549,6 @@ ScriptedImporter:
     - {x: 5, y: 6}
     - {x: 6, y: 7}
     tessellationDetail: 0
-    parentGroupIndex: -1
     uvTransform: {x: 4, y: 37}
     spritePosition: {x: 33, y: 46}
   - name: rightDownLeg
@@ -648,7 +645,6 @@ ScriptedImporter:
     - {x: 3, y: 4}
     - {x: 4, y: 5}
     tessellationDetail: 0
-    parentGroupIndex: -1
     uvTransform: {x: 29, y: 4}
     spritePosition: {x: 33, y: 0}
   - name: leftDownLeg
@@ -745,7 +741,6 @@ ScriptedImporter:
     - {x: 3, y: 4}
     - {x: 4, y: 5}
     tessellationDetail: 0
-    parentGroupIndex: -1
     uvTransform: {x: 39, y: 4}
     spritePosition: {x: 31, y: 0}
   - name: leftUpLeg
@@ -853,7 +848,6 @@ ScriptedImporter:
     - {x: 4, y: 5}
     - {x: 5, y: 6}
     tessellationDetail: 0
-    parentGroupIndex: -1
     uvTransform: {x: 48, y: 4}
     spritePosition: {x: 32, y: 12}
   - name: rightUpLeg
@@ -961,7 +955,6 @@ ScriptedImporter:
     - {x: 4, y: 5}
     - {x: 5, y: 6}
     tessellationDetail: 0
-    parentGroupIndex: -1
     uvTransform: {x: 57, y: 4}
     spritePosition: {x: 34, y: 12}
   - name: body
@@ -1102,7 +1095,6 @@ ScriptedImporter:
     - {x: 7, y: 8}
     - {x: 8, y: 9}
     tessellationDetail: 0
-    parentGroupIndex: -1
     uvTransform: {x: 47, y: 29}
     spritePosition: {x: 33, y: 26}
   - name: head
@@ -1286,7 +1278,6 @@ ScriptedImporter:
     - {x: 10, y: 11}
     - {x: 11, y: 12}
     tessellationDetail: 0
-    parentGroupIndex: -1
     uvTransform: {x: 4, y: 4}
     spritePosition: {x: 25, y: 47}
   characterData:
@@ -1501,6 +1492,7 @@ ScriptedImporter:
       order: 0
     dimension: {x: 0, y: 0}
     characterGroups: []
+    pivot: {x: 0, y: 0}
     boneReadOnly: 0
   sharedRigSpriteImportData: []
   sharedRigCharacterData:
@@ -1508,10 +1500,12 @@ ScriptedImporter:
     parts: []
     dimension: {x: 0, y: 0}
     characterGroups: []
+    pivot: {x: 0, y: 0}
     boneReadOnly: 0
   platformSettings:
   - name: DefaultTexturePlatform
     overridden: 0
+    ignorePlatformSupport: 0
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -1523,6 +1517,7 @@ ScriptedImporter:
     androidETC2FallbackOverride: 0
   - name: Standalone
     overridden: 0
+    ignorePlatformSupport: 0
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -1534,6 +1529,7 @@ ScriptedImporter:
     androidETC2FallbackOverride: 0
   - name: Server
     overridden: 0
+    ignorePlatformSupport: 0
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -1545,6 +1541,7 @@ ScriptedImporter:
     androidETC2FallbackOverride: 0
   - name: WebGL
     overridden: 0
+    ignorePlatformSupport: 0
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -1564,6 +1561,10 @@ ScriptedImporter:
   paperDollMode: 0
   keepDupilcateSpriteName: 1
   skeletonAssetReferenceID: 
+  pipeline: {instanceID: 0}
+  pipelineVersion: 
+  padding: 4
+  spriteSizeExpand: 0
   spriteCategoryList:
     categories: []
   spritePackingTag: 
@@ -1672,6 +1673,9 @@ ScriptedImporter:
     isVisible: 1
   sharedRigPSDLayers: []
   pSDLayerImportSetting: []
+  importFileNodeState: 1
+  platformSettingsDirtyTick: 0
+  spriteSizeExpandChanged: 0
   generateGOHierarchy: 0
   textureAssetName: 
   prefabAssetName: 
