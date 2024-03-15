@@ -61,8 +61,6 @@ public class PlayerCam : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-
-
         /*
         if (player.GetComponent<PlayerState>().baseState.isAimming)
         {
@@ -189,11 +187,20 @@ public class PlayerCam : MonoBehaviour
         //아니지, 3인칭에는 rebound가 필요없지 않나? 생각해보면...  일단 보류.
         //velocity 가져오기
         
-        Vector3 cameraRebound = -player.GetComponent<PlayerMovement>().rg.velocity * reboundFactor;
+        Vector3 cameraRebound = -player.GetComponent<PlayerMovement>().rg.velocity * reboundFactor;//반대 방향으로 약간 밀리기
         reboundPosition = Vector3.Lerp(reboundPosition, cameraRebound, camMoveSpeed * Time.deltaTime);
-        Debug.Log(cameraRebound);
-        transform.position = thirdFreeCamera.transform.position - transform.forward * thirdFreeCameraDistance + reboundPosition;
-        //아에 플레이어 밑에 넣어버리면 편한데.... 난 카메라 하나로 다해먹기로 했으니까 뭐...
+
+        //ray 뿌리고 거리따라
+        RaycastHit hit;
+        if (Physics.Raycast(thirdFreeCamera.transform.position, ( -transform.forward), out hit, thirdFreeCameraDistance))
+        {
+            transform.position = hit.point + reboundPosition;
+        }
+        else
+        {
+            transform.position = thirdFreeCamera.transform.position - transform.forward * thirdFreeCameraDistance + reboundPosition;
+        }
+         //아에 플레이어 밑에 넣어버리면 편한데.... 난 카메라 하나로 다해먹기로 했으니까 뭐...
     }
 
 

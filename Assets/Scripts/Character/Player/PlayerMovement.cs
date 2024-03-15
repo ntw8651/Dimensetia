@@ -35,10 +35,13 @@ public class PlayerMovement : MonoBehaviour
     public float jumpDegree;
     public float maxJumpDegree;
     public float jumpSpeed;
+    public float frictionFactor;
     public Rigidbody rg;
 
     public GameObject isGroundChecker;
 
+    public float maxJumpCooltime;
+    public float jumpCooltime;
 
     public PlayerState.CameraView cameraView;
 
@@ -56,12 +59,22 @@ public class PlayerMovement : MonoBehaviour
         //JumpCheck
         GetState();
 
-        if (Input.GetKey(KeyCode.Space) && isGrounded && !isJumping) {//NEED ADD : 점프 대기시간을 넣자
+        if (Input.GetKey(KeyCode.Space) && isGrounded && !isJumping && jumpCooltime<=0) {//NEED ADD : 점프 대기시간을 넣자
             isJumping = true;
             isGrounded = false;
             //velocity.y = jumpPower;
             rg.AddForce(Vector3.up * jumpPower, ForceMode.Impulse);
+            /*
+            if (rg.velocity.y < 0)
+            {
+                rg.AddForce(Vector3.up * jumpPower + Vector3.up * Mathf.Abs(rg.velocity.y), ForceMode.Impulse);
+            }
+            else
+            {
+                
+            }*/
             jumpDegree = 0;
+            jumpCooltime = maxJumpCooltime;
         }
         if (isGrounded) {
             isJumping = false;
@@ -84,8 +97,12 @@ public class PlayerMovement : MonoBehaviour
         //게다가 이걸 넣었던 이유가 그거였지 참 그 점프를 꾹누르면 더 높게 뛰는거 아하!!!! 내가 이걸 왜했었나 했네
         //음...근데 생각해보니까 어...음... 아니면 그냥 점프는 그대로 주고, 상부에서 체공할 수 있게 하는 그런 능력을 나중에 넣는게 낫겠다.
         //원래 습 에반데 싶은 건 피하랬어!
-
         //Gravity();
+
+
+        jumpCooltime -= Time.deltaTime;
+
+
 
 
         //Get Input 음...이것도 분리해야하나? 아냐 일단 점프는 스페이스바에만 귀속시켜두자
@@ -98,8 +115,8 @@ public class PlayerMovement : MonoBehaviour
             ThirdFreeViewInput();
         }
 
-
-
+        
+        
         
 
     }
@@ -107,14 +124,13 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        
+
 
         //Jump
-        
-        
         //Gravity(); //MovePosition을 쓸때만 필요한 녀석
         Move();
-        
+        GroundFriction();
+
         //점프를 점점 올라가게 해서 최대치에 해당하면 바꾸게 해버리는거야
 
 
@@ -185,7 +201,7 @@ public class PlayerMovement : MonoBehaviour
             
         }
 
-
+        
 
         //일단, 그럼 x-z축으로 최대치를 제한해야하잖아? 그럼...
         //아 그리고 y축은 어차피 use Gravity로 하면 되니까 일단 지우고
@@ -197,8 +213,6 @@ public class PlayerMovement : MonoBehaviour
 
         Vector3 planeVelocity = rg.velocity;
         planeVelocity.y = 0;
-
-        //아 잠깐, 길이면 역탄젠트가 아니라 그거지 그거 그 피타고라스아ㅋㅋㅋㅋㅋㅋㅋㅋ다 써두고 나 도대체 머한거야 그냥 좀 수학쫌치는척 해보려고 온갖 난리를 쳐놨네 ㅋㅋㅋㅋㅋㅋㅋ..ㅋ...ㅎ;
         if (Vector3.Distance(Vector3.zero, planeVelocity) >= maxSpeed)//자...그럼 일단... velocity로 역탄젠트로 길이를 구하고? 그게 일정속도면 이제 제한걸고. 근데 이제한은 또... 아 그래 노멀라이즈 시키고 최대값에 해당하는 사인코사인 주면 되구나
         {
             //음...근데 그냥 그게 낫겠다
@@ -234,7 +248,13 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
-
+    private void GroundFriction()
+    {
+        if (isGrounded)
+        {
+            rg.AddForce(-rg.velocity*frictionFactor/10, ForceMode.Impulse);
+        }
+    }
 
 
     //잠시 해야할 일이 생겨따!람쥐
