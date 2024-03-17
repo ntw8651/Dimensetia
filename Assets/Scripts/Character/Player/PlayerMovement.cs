@@ -76,6 +76,7 @@ public class PlayerMovement : MonoBehaviour
             jumpDegree = 0;
             jumpCooltime = maxJumpCooltime;
         }
+
         if (isGrounded) {
             isJumping = false;
         }
@@ -250,14 +251,16 @@ public class PlayerMovement : MonoBehaviour
 
     private void GroundFriction()
     {
+        /*
         if (isGrounded)
         {
             rg.AddForce(-rg.velocity*frictionFactor/10, ForceMode.Impulse);
         }
+        */
+
+        rg.AddForce((new Vector3(0, rg.velocity.y, 0)-rg.velocity) * frictionFactor / 10, ForceMode.Impulse);
     }
 
-
-    //잠시 해야할 일이 생겨따!람쥐
     private void Gravity()  
     {
         /*if (isJumping)
